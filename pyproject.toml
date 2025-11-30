@@ -1,0 +1,70 @@
+[project]
+name = "vnpy_iotdb"
+dynamic = ["version"]
+description = "IoTDB database adapter for VeighNa trading framework."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "none", email = "none@none.com"}]
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Office/Business :: Financial :: Investment",
+    "Typing :: Typed"
+]
+requires-python = ">=3.11"
+dependencies = [
+    "apache-iotdb>=2.0.5"
+]
+keywords = ["quant", "quantitative", "investment", "trading", "algotrading"]
+
+[project.urls]
+"Homepage" = ""
+"Documentation" = ""
+"Source" = "https://github.com/onesixth/vnpy_iotdb/"
+"Forum" = ""
+
+[build-system]
+requires = ["hatchling>=1.27.0"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "vnpy_iotdb/__init__.py"
+pattern = "__version__ = ['\"](?P<version>[^'\"]+)['\"]"
+
+[tool.hatch.build.targets.wheel]
+packages = ["vnpy_iotdb"]
+include-package-data = true
+
+[tool.hatch.build.targets.sdist]
+include = ["vnpy_iotdb*"]
+
+[tool.ruff]
+target-version = "py311"
+output-format = "full"
+
+[tool.ruff.lint]
+select = [
+    "B",  # flake8-bugbear
+    "E",  # pycodestyle error
+    "F",  # pyflakes
+    "UP",  # pyupgrade
+    "W",  # pycodestyle warning
+]
+ignore = ["E501"]
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+disallow_untyped_decorators = true
+no_implicit_optional = true
+strict_optional = true
+warn_redundant_casts = true
+warn_unused_ignores = true
+warn_no_return = true
+ignore_missing_imports = true
