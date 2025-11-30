@@ -22,7 +22,7 @@ keywords = ["quant", "quantitative", "investment", "trading", "algotrading"]
 [project.urls]
 "Homepage" = ""
 "Documentation" = ""
-"Source" = "https://github.com/onesixth/vnpy_iotdb/"
+"Source" = "https://github.com/One-sixth/vnpy_iotdb"
 "Forum" = ""
 
 [build-system]
